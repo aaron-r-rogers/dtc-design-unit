@@ -1,0 +1,151 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.slider {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #22273c;
+    color: #fff;
+    display: flex;
+    overflow: hidden;
+}
+
+.slider__ui {
+	z-index: 1;
+
+	max-width: 1200px;
+	min-width: 60%;
+    margin: 30px 0 0 30px;
+	display: flex;
+	justify-content: space-between;
+
+	.slider__arrow {
+		width: 50px;
+		height: 50px;
+		border-radius: 100%;
+		border: 1px solid #fff;
+		opacity: 0.5;
+		background: #fff;
+		margin-left: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: black;
+	}
+}
+
+.slider__controls {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%); /* Center the controls horizontally */
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+}
+
+.slider__navpoint {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+	font-weight: 900;
+
+	&:first-of-type {
+		.slider__timer {
+			width: 95px;
+		}
+		.slider__label {
+			opacity: 1;
+		}
+	}
+
+	.slider__label {
+		opacity: 0;
+		font-weight: 400;
+	}
+
+	.slider__timer {
+		position: relative;
+		width: 55px;
+		height: 1px;
+		background: rgba(#fff, 0.5);
+		margin: 0 5px;
+		overflow: hidden;
+
+		.timer__progress {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #fff;
+			height: 1px;
+			width: 100%;
+			transform: translateX(-100%);
+		}
+	}
+}
+
+.slider__slide {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+
+	&.slide--active {
+		display: block;
+	}
+}
+
+.slide__image {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+    z-index: -1;
+
+	img {
+		position: absolute;
+		object-fit: cover;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 1;
+	}
+}
+
+.slide__container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.slide__content {
+	padding-top: 100px;
+	max-width: 1200px;
+	min-width: 60%;
+	font-family: sans-serif;
+}
+
+.slide__title {
+	font-size: 45px;
+	max-width: 650px;
+	line-height: 1.2;
+	font-weight: 600;
+}
+
+.slide__link {
+	margin-top: 25px;
+}
